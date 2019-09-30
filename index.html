@@ -97,6 +97,12 @@ var _hmt = _hmt || [];
 			</a>
 		  </li>
 		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class="fa fa-user"></i>RSS
+			</a>
+		  </li>
+		  
 		</ul>
       </div>
     </div> <!-- container -->
@@ -128,35 +134,6 @@ var _hmt = _hmt || [];
 		<div class="mypage">
 		
 		<!-- title and entry -->
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/05/30/Oracle触发器的实现（二）/">Oracle触发器的实现（二）</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-05-30  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>在上一篇文章<a href="/2019/01/03/Oracle触发器的实现/">Oralce触发器的实现</a>简单的实现了一个触发器，这篇文章会稍加复杂一点。</p>
-<p>需求描述：</p>
-<p>有一张<code>students</code> 的表，当表中如果插入（新增）一条数据的时候，在新增的那条数据的 <code>remarks</code> 字段中添加<code>This is a new data</code> 的备注；如果修改了一条数据，那么就把这条数据插入到 <code>students_updated</code> 这张表，并添加数据的修改时间。</p>
-	
-	</div>
-  <a type="button" href="/2019/05/30/Oracle触发器的实现（二）/#more" class="btn btn-default more">Read More</a>
-</div>
-
 		
 			
 	
@@ -271,99 +248,6 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2019/04/20/Oracle通过expdp导出-impdp导入/">Oracle通过expdp导出/impdp导入</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-20  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>EXP和IMP是客户端工具程序，它们既可以在客户端使用，也可以在服务端使用。<br>EXPDP和IMPDP是服务端的工具程序，他们只能在ORACLE服务端使用，不能在客户端使用。<br>IMP只适用于EXP导出的文件，不适用于EXPDP导出文件；IMPDP只适用于EXPDP导出的文件，而不适用于EXP导出文件。</p>
-<h3 id="创建逻辑目录"><a href="#创建逻辑目录" class="headerlink" title="创建逻辑目录"></a>创建逻辑目录</h3><p>逻辑目录用于存放导出的dmp数据文件和log日志文件</p>
-<h4 id="查看逻辑目录"><a href="#查看逻辑目录" class="headerlink" title="查看逻辑目录"></a>查看逻辑目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM dba_directories;</span><br></pre></td></tr></table></figure>
-	
-	</div>
-  <a type="button" href="/2019/04/20/Oracle通过expdp导出-impdp导入/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/19/Oracle更改用户名和密码/">Oracle更改用户名和密码</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-19  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="1、用sysdba账号登入数据库，然后查询到要更改的用户信息："><a href="#1、用sysdba账号登入数据库，然后查询到要更改的用户信息：" class="headerlink" title="1、用sysdba账号登入数据库，然后查询到要更改的用户信息："></a>1、用sysdba账号登入数据库，然后查询到要更改的用户信息：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT user#,name FROM user$;</span><br></pre></td></tr></table></figure>
-<h3 id="2、更改用户名并提交："><a href="#2、更改用户名并提交：" class="headerlink" title="2、更改用户名并提交："></a>2、更改用户名并提交：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; UPDATE USER$ SET NAME=&apos;PORTAL&apos; WHERE user#=88;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; COMMIT;</span><br></pre></td></tr></table></figure>
-<h3 id="3、强制刷新："><a href="#3、强制刷新：" class="headerlink" title="3、强制刷新："></a>3、强制刷新：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ALTER SYSTEM CHECKPOINT;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ALTER SYSTEM FLUSH SHARED_POOL;</span><br></pre></td></tr></table></figure>
-<h3 id="4、更新用户的密码："><a href="#4、更新用户的密码：" class="headerlink" title="4、更新用户的密码："></a>4、更新用户的密码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ALTER USER PORTAL IDENTIFIED BY 123;</span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-  <a type="button" href="/2019/04/19/Oracle更改用户名和密码/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/18/Linux查看和修改PATH环境变量的方法/">Linux查看和修改PATH环境变量的方法</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-18  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="查看PATH："><a href="#查看PATH：" class="headerlink" title="查看PATH："></a>查看PATH：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
-<h3 id="修改方法一："><a href="#修改方法一：" class="headerlink" title="修改方法一："></a>修改方法一：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/mongodb/bin:$PATH</span><br></pre></td></tr></table></figure>
-<p>配置完后可以通过echo $PATH查看配置结果。</p>
-<p>生效方法：立即生效<br>有效期限：临时改变，只能在当前的终端窗口中有效，当前窗口关闭后就会恢复原有的path配置<br>用户局限：仅对当前用户</p>
-<h3 id="修改方法二："><a href="#修改方法二：" class="headerlink" title="修改方法二："></a>修改方法二：</h3>
-	
-	</div>
-  <a type="button" href="/2019/04/18/Linux查看和修改PATH环境变量的方法/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/2019/04/08/Oracle的一些故障处理/">Oracle的一些故障处理</a>
 		</h3>
 		</div>
@@ -391,11 +275,11 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2019/03/31/Spring之自动装配/">Spring之自动装配</a>
+			<a href="/2019/03/26/Java基础知识小结/">Java基础知识小结</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
-		<div class="date">post @ 2019-03-31  </div>
+		<div class="date">post @ 2019-03-26  </div>
 		</div>
 	</div>
 	
@@ -405,15 +289,10 @@ var _hmt = _hmt || [];
   <div class="row">
 	
 	
-		<h4 id="Spring由名称自动装配"><a href="#Spring由名称自动装配" class="headerlink" title="Spring由名称自动装配"></a>Spring由名称自动装配</h4><p>Spring有一下几种装配模式：</p>
-<ul>
-<li>默认情况下，通过ref指定装配bean</li>
-<li>byName - 根据属性名称自动装配</li>
-<li>byType - 根据数据类型自动装配</li>
-</ul>
+		<p>写这篇文章是为了记录一下学习中被忽略的知识点，这些知识点虽然知道听说过，但对它们的概念和作用都很模糊，如果别人问起为什么，自己还真解释不上来，因此做个记录，方便以后回顾以及大家一起学习。</p>
 	
 	</div>
-  <a type="button" href="/2019/03/31/Spring之自动装配/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2019/03/26/Java基础知识小结/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -423,11 +302,11 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2019/03/31/Spring通过JDBC连接数据库并进行增删改查的操作/">Spring通过JDBC连接数据库并进行增删改查的操作</a>
+			<a href="/2018/03/03/Oracle存储过程的实现/">Oracle存储过程的实现</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
-		<div class="date">post @ 2019-03-31  </div>
+		<div class="date">post @ 2018-03-03  </div>
 		</div>
 	</div>
 	
@@ -437,11 +316,39 @@ var _hmt = _hmt || [];
   <div class="row">
 	
 	
-		<h3 id="Spring通过JDBC连接MySQL数据库并进行增删改查的操作"><a href="#Spring通过JDBC连接MySQL数据库并进行增删改查的操作" class="headerlink" title="Spring通过JDBC连接MySQL数据库并进行增删改查的操作"></a>Spring通过JDBC连接MySQL数据库并进行增删改查的操作</h3><p>首先我们在自己的MySQL数据库中建一张学生成绩表，做为我们的测试用例。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`students`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`math`</span> <span class="built_in">int</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`english`</span> <span class="built_in">int</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">4</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br></pre></td></tr></table></figure>
+		<p>Oracle存储过程是一组为了完成特定功能的SQL语句集，经编译后存储在数据库中。用户通过指定存储过程的名字并给出参数（是否给参数要看该存储过程定义的过程中是否设置了参数）来执行它。</p>
 	
 	</div>
-  <a type="button" href="/2019/03/31/Spring通过JDBC连接数据库并进行增删改查的操作/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/03/03/Oracle存储过程的实现/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2013/07/13/hello-world/">Hello World</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2013-07-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br>
+	
+	</p></div>
+  <a type="button" href="/2013/07/13/hello-world/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -454,16 +361,6 @@ var _hmt = _hmt || [];
 		<div class="pagination">
 
    
-    
-           <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
-        
-
-        <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
- 
-       <a href="/page/2/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>     
-        
-
-  
 </div>
 
   		</center>
@@ -492,17 +389,13 @@ var _hmt = _hmt || [];
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/Git/">Git<span>1</span></a></li>
-		
-			<li><a href="/categories/Java框架/">Java框架<span>3</span></a></li>
-		
 			<li><a href="/categories/工具/">工具<span>1</span></a></li>
 		
-			<li><a href="/categories/数据库/">数据库<span>9</span></a></li>
+			<li><a href="/categories/数据库/">数据库<span>2</span></a></li>
 		
 			<li><a href="/categories/编程语言/">编程语言<span>3</span></a></li>
 		
-			<li><a href="/categories/运维/">运维<span>4</span></a></li>
+			<li><a href="/categories/运维/">运维<span>1</span></a></li>
 		
 		</ul>
 	</div>
@@ -513,9 +406,15 @@ var _hmt = _hmt || [];
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Linux命令/">Linux命令<span>2</span></a></li>
+			<li><a href="/tags/Java/">Java<span>2</span></a></li>
 		
-			<li><a href="/tags/Java/">Java<span>5</span></a></li>
+			<li><a href="/tags/单例模式/">单例模式<span>1</span></a></li>
+		
+			<li><a href="/tags/定时任务/">定时任务<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>1</span></a></li>
 		
 			<li><a href="/tags/hello/">hello<span>1</span></a></li>
 		
@@ -523,33 +422,7 @@ var _hmt = _hmt || [];
 		
 			<li><a href="/tags/world/">world<span>1</span></a></li>
 		
-			<li><a href="/tags/ps进程/">ps进程<span>1</span></a></li>
-		
 			<li><a href="/tags/Oracle-存储过程/">Oracle 存储过程<span>1</span></a></li>
-		
-			<li><a href="/tags/定时任务/">定时任务<span>1</span></a></li>
-		
-			<li><a href="/tags/expdp/">expdp<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>2</span></a></li>
-		
-			<li><a href="/tags/Oracle/">Oracle<span>5</span></a></li>
-		
-			<li><a href="/tags/Spring/">Spring<span>3</span></a></li>
-		
-			<li><a href="/tags/PATH环境变量/">PATH环境变量<span>1</span></a></li>
-		
-			<li><a href="/tags/impdp/">impdp<span>1</span></a></li>
-		
-			<li><a href="/tags/单例模式/">单例模式<span>1</span></a></li>
-		
-			<li><a href="/tags/DBLink/">DBLink<span>1</span></a></li>
-		
-			<li><a href="/tags/Oracle-触发器/">Oracle 触发器<span>2</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -561,10 +434,6 @@ var _hmt = _hmt || [];
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2019/05/30/Oracle触发器的实现（二）/"><i class="fa fa-file-o"></i>Oracle触发器的实现（二）</a>
-      </li>
     
       <li>
         <a href="/2019/05/28/理解线程安全/"><i class="fa fa-file-o"></i>理解线程安全</a>
@@ -579,7 +448,11 @@ var _hmt = _hmt || [];
       </li>
     
       <li>
-        <a href="/2019/04/20/Oracle通过expdp导出-impdp导入/"><i class="fa fa-file-o"></i>Oracle通过expdp导出/impdp导入</a>
+        <a href="/2019/04/08/Oracle的一些故障处理/"><i class="fa fa-file-o"></i>Oracle的一些故障处理</a>
+      </li>
+    
+      <li>
+        <a href="/2019/03/26/Java基础知识小结/"><i class="fa fa-file-o"></i>Java基础知识小结</a>
       </li>
     
   </ul>
@@ -592,6 +465,8 @@ var _hmt = _hmt || [];
 	<ul class="blogroll list-unstyled">
 	
 		<li><i class="fa fa-github"></i><a href="https://github.com/Bronze-hammer" title="My Github account." target="_blank" ]);">My Github</a></li>
+	
+		<li><i class="fa fa-file-text"></i><a href="https://blog.csdn.net/Bronzehammer" title="My CSDN account." target="_blank" ]);">My CSDN</a></li>
 	
 	</ul>
 </div>
