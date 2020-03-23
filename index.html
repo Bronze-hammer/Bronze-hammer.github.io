@@ -141,6 +141,34 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/03/23/Oracle索引/">Oracle索引</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-03-23  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。 </p>
+<p>在没有创建索引之前，如果要按照用户名字段username全表查询一条用户数据，就要必须在全表都搜索一遍；在username上创建索引，Oracle会对全表进行一次搜索，将每条记录的username按照顺序排序，然后构建索引条目（name和rowid），存储到索引段中。在接下来查找username等于某个值时即可直接查找到相应的地方。</p>
+	
+	</div>
+  <a type="button" href="/2020/03/23/Oracle索引/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2019/05/28/理解线程安全/">理解线程安全</a>
 		</h3>
 		</div>
@@ -391,7 +419,7 @@ var _hmt = _hmt || [];
 		
 			<li><a href="/categories/工具/">工具<span>1</span></a></li>
 		
-			<li><a href="/categories/数据库/">数据库<span>2</span></a></li>
+			<li><a href="/categories/数据库/">数据库<span>3</span></a></li>
 		
 			<li><a href="/categories/编程语言/">编程语言<span>3</span></a></li>
 		
@@ -406,21 +434,23 @@ var _hmt = _hmt || [];
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Java/">Java<span>2</span></a></li>
-		
-			<li><a href="/tags/单例模式/">单例模式<span>1</span></a></li>
+			<li><a href="/tags/oracle/">oracle<span>2</span></a></li>
 		
 			<li><a href="/tags/定时任务/">定时任务<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>1</span></a></li>
-		
 			<li><a href="/tags/hello/">hello<span>1</span></a></li>
+		
+			<li><a href="/tags/单例模式/">单例模式<span>1</span></a></li>
+		
+			<li><a href="/tags/Java/">Java<span>2</span></a></li>
 		
 			<li><a href="/tags/线程安全/">线程安全<span>1</span></a></li>
 		
+			<li><a href="/tags/索引/">索引<span>1</span></a></li>
+		
 			<li><a href="/tags/world/">world<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
 		
 			<li><a href="/tags/Oracle-存储过程/">Oracle 存储过程<span>1</span></a></li>
 		
@@ -436,6 +466,10 @@ var _hmt = _hmt || [];
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2020/03/23/Oracle索引/"><i class="fa fa-file-o"></i>Oracle索引</a>
+      </li>
+    
+      <li>
         <a href="/2019/05/28/理解线程安全/"><i class="fa fa-file-o"></i>理解线程安全</a>
       </li>
     
@@ -449,10 +483,6 @@ var _hmt = _hmt || [];
     
       <li>
         <a href="/2019/04/08/Oracle的一些故障处理/"><i class="fa fa-file-o"></i>Oracle的一些故障处理</a>
-      </li>
-    
-      <li>
-        <a href="/2019/03/26/Java基础知识小结/"><i class="fa fa-file-o"></i>Java基础知识小结</a>
       </li>
     
   </ul>
@@ -483,7 +513,7 @@ var _hmt = _hmt || [];
   </div>
   <div class="container-narrow">
   <footer> <p>
-  &copy; 2019 xuzh
+  &copy; 2020 xuzh
   
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
      <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
