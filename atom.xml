@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-14T05:40:19.871Z</updated>
+  <updated>2020-07-08T05:38:30.279Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java抽象类和接口</title>
+    <link href="http://yoursite.com/2020/07/08/Java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://yoursite.com/2020/07/08/Java抽象类和接口/</id>
+    <published>2020-07-08T05:36:47.000Z</published>
+    <updated>2020-07-08T05:38:30.279Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="先说对这两个概念的理解"><a href="#先说对这两个概念的理解" class="headerlink" title="先说对这两个概念的理解"></a>先说对这两个概念的理解</h3><p>我们先说抽象类，其实抽象类的设计理念是“is-a”关系，就是说它更关心的是被抽象的这些个对象是什么，比如说藏獒，贵宾，哈士奇，我们要给他们写抽象类，那抽象出来这个类就是狗狗类，无论什么品种的狗，都是狗狗。</p><p>再说说接口，接口的设计理念是“has-a”关系，它关心的能做什么，比如说你可以写一个接口，里面有吠()这个方法，再写一个接口，里面有跑()这个方法，那么你可以让狗狗类实现这两个方法，让狗狗拥有这两项功能。而你可以发现，人类，喵类也都可以实现整个跑这个接口来拥有这项功能。</p><p>所以在java中，类的单继承多实现的概念就好理解了，狗狗只能继承狗狗这个类，不可能让它去继承人类或者喵类，但能实现n多个接口，跑、跳、吠、打滚。</p><p>在应用场景中，抽象类用于同类事物，而接口多是可以横跨很多个类。</p><h3 id="他们有哪些具体区别呢？"><a href="#他们有哪些具体区别呢？" class="headerlink" title="他们有哪些具体区别呢？"></a>他们有哪些具体区别呢？</h3><p>1）抽象类则可以包含普通方法，接口中的普通方法默认为抽象方法。</p><p>2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的，并且必须赋值，否则通不过编译。</p><p>3）接口不能包含构造器，抽象类可以包含构造器，抽象类里的构造器并不是用于创建对象，而是让其子类调用这些构造器来完成属于抽象类的初始化操作。</p><p>4）接口里不能包含初始化块，但抽象类里完全可以包含初始化块。</p><p>5）就是我们所说的单继承多实现了。</p><p>最后，送上我在一本书上看到的特别绕的三句话，接口可以继承接口，抽象类可以实现接口，抽象类可以继承具体类。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;先说对这两个概念的理解&quot;&gt;&lt;a href=&quot;#先说对这两个概念的理解&quot; class=&quot;headerlink&quot; title=&quot;先说对这两个概念的理解&quot;&gt;&lt;/a&gt;先说对这两个概念的理解&lt;/h3&gt;&lt;p&gt;我们先说抽象类，其实抽象类的设计理念是“is-a”关系，就是说它更关
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="抽象类" scheme="http://yoursite.com/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+    
+      <category term="接口" scheme="http://yoursite.com/tags/%E6%8E%A5%E5%8F%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL事务</title>

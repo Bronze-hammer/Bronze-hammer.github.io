@@ -6,13 +6,16 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>编程语言 | 徐子辉的个人站点</title>
+  <title>Java抽象类和接口 | 徐子辉的个人站点</title>
   <meta name="author" content="xuzh">
+  
+  <meta name="description" content="先说对这两个概念的理解我们先说抽象类，其实抽象类的设计理念是“is-a”关系，就是说它更关心的是被抽象的这些个对象是什么，比如说藏獒，贵宾，哈士奇，我们要给他们写抽象类，那抽象出来这个类就是狗狗类，无论什么品种的狗，都是狗狗。
+再说说接口，接口的设计理念是“has-a”关系，它关心的能做什么，比如说">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Java抽象类和接口">
   <meta property="og:site_name" content="徐子辉的个人站点">
 
   
@@ -113,192 +116,123 @@ var _hmt = _hmt || [];
   	<div class="content">
     	 
 
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title-category"><i class="fa fa-archive"></i> 编程语言</h1>
-</div>
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
 	
-
-	  <div id="top_search"></div>
-
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2019">2019<b class="caret"></b></h4>
-			<ul id="2019" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-05-28 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/05/28/理解线程安全/">理解线程安全</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-04-28 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/04/28/单例模式的7种写法/">单例模式的7种写法</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-03-26 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/03/26/Java基础知识小结/">Java基础知识小结</a></span>
-		
-		</li>			
-		
-		</ul>
+		<div class="page-header">
+			<h1> Java抽象类和接口</h1>
 		</div>
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
 	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control">
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
 
 
-		
-			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Java/">Java<span>2</span></a></li>
-		
-			<li><a href="/categories/MySQL/">MySQL<span>1</span></a></li>
-		
-			<li><a href="/categories/工具/">工具<span>1</span></a></li>
-		
-			<li><a href="/categories/数据库/">数据库<span>5</span></a></li>
-		
-			<li><a href="/categories/编程语言/">编程语言<span>3</span></a></li>
-		
-			<li><a href="/categories/运维/">运维<span>2</span></a></li>
-		
-		</ul>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h3 id="先说对这两个概念的理解"><a href="#先说对这两个概念的理解" class="headerlink" title="先说对这两个概念的理解"></a>先说对这两个概念的理解</h3><p>我们先说抽象类，其实抽象类的设计理念是“is-a”关系，就是说它更关心的是被抽象的这些个对象是什么，比如说藏獒，贵宾，哈士奇，我们要给他们写抽象类，那抽象出来这个类就是狗狗类，无论什么品种的狗，都是狗狗。</p>
+<p>再说说接口，接口的设计理念是“has-a”关系，它关心的能做什么，比如说你可以写一个接口，里面有吠()这个方法，再写一个接口，里面有跑()这个方法，那么你可以让狗狗类实现这两个方法，让狗狗拥有这两项功能。而你可以发现，人类，喵类也都可以实现整个跑这个接口来拥有这项功能。</p>
+<p>所以在java中，类的单继承多实现的概念就好理解了，狗狗只能继承狗狗这个类，不可能让它去继承人类或者喵类，但能实现n多个接口，跑、跳、吠、打滚。</p>
+<p>在应用场景中，抽象类用于同类事物，而接口多是可以横跨很多个类。</p>
+<h3 id="他们有哪些具体区别呢？"><a href="#他们有哪些具体区别呢？" class="headerlink" title="他们有哪些具体区别呢？"></a>他们有哪些具体区别呢？</h3><p>1）抽象类则可以包含普通方法，接口中的普通方法默认为抽象方法。</p>
+<p>2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的，并且必须赋值，否则通不过编译。</p>
+<p>3）接口不能包含构造器，抽象类可以包含构造器，抽象类里的构造器并不是用于创建对象，而是让其子类调用这些构造器来完成属于抽象类的初始化操作。</p>
+<p>4）接口里不能包含初始化块，但抽象类里完全可以包含初始化块。</p>
+<p>5）就是我们所说的单继承多实现了。</p>
+<p>最后，送上我在一本书上看到的特别绕的三句话，接口可以继承接口，抽象类可以实现接口，抽象类可以继承具体类。</p>
+	  
 	</div>
 
-		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/Oracle-存储过程/">Oracle 存储过程<span>1</span></a></li>
-		
-			<li><a href="/tags/mysql/">mysql<span>1</span></a></li>
-		
-			<li><a href="/tags/事务/">事务<span>1</span></a></li>
-		
-			<li><a href="/tags/MySQL/">MySQL<span>1</span></a></li>
-		
-			<li><a href="/tags/world/">world<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>3</span></a></li>
-		
-			<li><a href="/tags/线程安全/">线程安全<span>1</span></a></li>
-		
-			<li><a href="/tags/COUNT/">COUNT<span>1</span></a></li>
-		
-			<li><a href="/tags/线程/">线程<span>1</span></a></li>
-		
-			<li><a href="/tags/索引/">索引<span>1</span></a></li>
-		
-			<li><a href="/tags/优化/">优化<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>2</span></a></li>
-		
-			<li><a href="/tags/hello/">hello<span>1</span></a></li>
-		
-			<li><a href="/tags/单例模式/">单例模式<span>1</span></a></li>
-		
-			<li><a href="/tags/定时任务/">定时任务<span>1</span></a></li>
-		
-			<li><a href="/tags/vsftpd/">vsftpd<span>1</span></a></li>
-		
-			<li><a href="/tags/接口/">接口<span>1</span></a></li>
-		
-			<li><a href="/tags/Java/">Java<span>2</span></a></li>
-		
-			<li><a href="/tags/抽象类/">抽象类<span>1</span></a></li>
-		
-		 
-		</ul>
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/04/26/MySQL事务/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
 	</div>
-
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2020/07/08/Java抽象类和接口/"><i class="fa fa-file-o"></i>Java抽象类和接口</a>
-      </li>
-    
-      <li>
-        <a href="/2020/04/26/MySQL事务/"><i class="fa fa-file-o"></i>MySQL事务</a>
-      </li>
-    
-      <li>
-        <a href="/2020/04/14/Java多线程/"><i class="fa fa-file-o"></i>Java多线程</a>
-      </li>
-    
-      <li>
-        <a href="/2020/04/09/面试官邪魅一笑：MySQL千万级别大表，你要如何优化？/"><i class="fa fa-file-o"></i>面试官邪魅一笑：MySQL千万级别大表，你要如何优化？</a>
-      </li>
-    
-      <li>
-        <a href="/2020/04/02/vsftpd配置文件详解/"><i class="fa fa-file-o"></i>vsftpd配置文件详解</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/Bronze-hammer" title="My Github account." target="_blank" ]);">My Github</a></li>
+	<!-- comment -->
 	
-		<li><i class="fa fa-file-text"></i><a href="https://blog.csdn.net/Bronzehammer" title="My CSDN account." target="_blank" ]);">My CSDN</a></li>
-	
-	</ul>
-</div>
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
 
 
+	</div> <!-- col-md-9/col-md-12 -->
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-07-08 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/categories/Java/">Java<span>2</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/抽象类/">抽象类<span>1</span></a></li> <li><a href="/tags/接口/">接口<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
 
 
 
-</div>
 	</div>
   </div>
   <div class="container-narrow">
